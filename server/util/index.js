@@ -19,7 +19,7 @@ async function load_parts(outfile=false) {
         }))
     }))
     if(outfile) {
-        await fs.writeFile(path.join(__dirname, outfile), JSON.stringify(parts_data))
+        await fs.writeFile(outfile, JSON.stringify(parts_data))
     }
     return parts_data
 }
@@ -56,9 +56,15 @@ function generate_random_emoji_svg(parts_data, save_as_svg=false, save_as_png=fa
     return { id: outfile, svg_data: svg_out }
 }
 
-// (async () => {
-//     var parts_data = await load_parts('parts_data.json')
-//     for(var i = 0; i < 50; i++) {
-//         generate_random_emoji_svg(parts_data, false, true)
-//     }
-// })()
+(async () => {
+    var parts_data = await load_parts('parts_data.json')
+    generate_random_emoji_svg(parts_data, true)
+    // for(var i = 0; i < 50; i++) {
+    //     generate_random_emoji_svg(parts_data, false, true)
+    // }
+})()
+
+module.exports = {
+    path,
+    load_parts
+}
