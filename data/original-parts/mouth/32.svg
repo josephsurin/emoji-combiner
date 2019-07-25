@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" width="100" height="100" xml:space="preserve" version="1.1" id="svg2">
+    <defs id="defs6">
+        <clipPath id="clipPath16" clipPathUnits="userSpaceOnUse">
+            <path id="path18" d="M 0,36 36,36 36,0 0,0 0,36 Z"/>
+        </clipPath>
+    </defs>
+    <g transform="matrix(1.25,0,0,-1.25,0,45)" id="g10">
+        <g id="g12">
+            <g clip-path="url(#clipPath16)" id="g14">
+                <g transform="translate(14.6068,11.0258)" id="g24">
+                    <path id="path26" style="fill:none;stroke:#664500;stroke-width:2.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 0,0 c 0.903,0.595 2.064,0.953 3.331,0.953 1.258,0 2.411,-0.352 3.311,-0.939"/>
+                </g>
+                <g transform="translate(11.6471,6.3529)" id="g36">
+                    <path id="path38" style="fill:#664500;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -0.444,0 -0.857,0.28 -1.005,0.724 -0.185,0.555 0.115,1.155 0.67,1.339 0.095,0.033 2.453,0.877 2.453,3.231 0,2.355 -2.358,3.198 -2.459,3.232 -0.55,0.192 -0.846,0.791 -0.658,1.343 0.187,0.552 0.78,0.852 1.334,0.664 0.159,-0.052 3.9,-1.344 3.9,-5.239 0,-3.895 -3.741,-5.186 -3.9,-5.239 C 0.224,0.018 0.111,0 0,0"/>
+                </g>
+                <g transform="translate(24.3519,6.3529)" id="g40">
+                    <path id="path42" style="fill:#664500;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -0.111,0 -0.223,0.018 -0.334,0.055 -0.159,0.053 -3.9,1.344 -3.9,5.239 0,3.895 3.741,5.187 3.9,5.239 C 0.225,10.72 0.82,10.419 1.005,9.864 1.19,9.311 0.892,8.714 0.341,8.526 0.241,8.492 -2.117,7.649 -2.117,5.294 -2.117,2.94 0.241,2.096 0.341,2.062 0.892,1.871 1.188,1.271 1.001,0.72 0.851,0.278 0.44,0 0,0"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
