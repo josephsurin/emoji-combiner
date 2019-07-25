@@ -3,12 +3,12 @@ const fs = require('fs-extra')
 const stream = require('stream')
 const { exec } = require('child_process')
 
-const PARTS_DIR = path.join(__dirname, '../data/optimised-parts/')
-const PARTS = ['bases', 'brows', 'extras', 'eyes', 'mouth']
+const PARTS_DIR = path.join(__dirname, '../../data/optimised-parts/')
+const PARTS = ['bases', 'brows', 'mouth', 'eyes', 'extras']
 
 const rand_el = arr => arr[Math.floor(Math.random() * arr.length)]
 
-async function load_parts() {
+async function load_parts(outfile=false) {
     var parts_data = {}
     await Promise.all(PARTS.map(async (part) => {
         parts_data[part] = {}
@@ -18,6 +18,9 @@ async function load_parts() {
             parts_data[part][path.basename(parts_file, '.svg')] = buffer.toString()
         }))
     }))
+    if(outfile) {
+        await fs.writeFile(path.join(__dirname, outfile), JSON.stringify(parts_data))
+    }
     return parts_data
 }
 
@@ -53,9 +56,9 @@ function generate_random_emoji_svg(parts_data, save_as_svg=false, save_as_png=fa
     return { id: outfile, svg_data: svg_out }
 }
 
-(async () => {
-    var parts_data = await load_parts()
-    for(var i = 0; i < 50; i++) {
-        generate_random_emoji_svg(parts_data, false, true)
-    }
-})()
+// (async () => {
+//     var parts_data = await load_parts('parts_data.json')
+//     for(var i = 0; i < 50; i++) {
+//         generate_random_emoji_svg(parts_data, false, true)
+//     }
+// })()
