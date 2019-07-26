@@ -5,7 +5,10 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node server/index.js",
-    "maint": "node server/util/maint.js"
+    "maint": "node server/util/maint.js",
+    "build": "terser -c -m -o ./public/static/script.js -- ./public/src/script.js && sass ./public/src/main.sass ./public/static/main.css",
+    "dev-f": "watch 'npm run build' ./public/",
+    "dev-b": "nodemon -w ./server/ ./server/index.js -V"
   },
   "author": "",
   "license": "ISC",
