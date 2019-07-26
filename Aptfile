@@ -4,4 +4,13 @@ libgc1c2
 libgsl-dev
 libpoppler73
 libpoppler-glib8
+libwpg-0.3-3
+libvisio-0.1-1
+libcdr-0.1-1
+libgtkspell0
+libcairomm-1.0-1v5
+libpangomm-1.4-1v5
+libglibmm-2.4-1v5
+libsigc++-2.0-0v5
+libaspell15
 https://code.launchpad.net/~inkscape.dev/+archive/ubuntu/stable/+files/inkscape_0.92.4+68~ubuntu18.04.1_amd64.deb
