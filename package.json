@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node server/index.js",
     "maint": "node server/util/maint.js",
-    "build-f": "terser -c -m -o ./public/static/script.js -- ./public/src/script.js && sass ./public/src/main.sass ./public/static/main.css",
-    "dev-f": "watch 'npm run build-f' ./public/",
+    "fbuild": "terser -c -m -o ./public/static/script.js -- ./public/src/script.js && sass ./public/src/main.sass ./public/static/main.css",
+    "dev-f": "watch 'npm run fbuild' ./public/",
     "dev-b": "nodemon -w ./server/ ./server/index.js -V"
   },
   "author": "",
