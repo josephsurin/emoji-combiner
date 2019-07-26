@@ -26,7 +26,7 @@ async function load_parts(outfile=false) {
 
 function inkscape_get_png_buffer(svg_data) {
     return new Promise((res, rej) => {
-        var child = exec(`/usr/bin/inkscape -z -e - -d 500 - | tee good.png`, { encoding: 'binary' }, (err, stdout, stderr) => {
+        var child = exec(`/usr/bin/inkscape -z -e - -d 500 -`, { encoding: 'binary' }, (err, stdout, stderr) => {
             if(err) {
                 console.log('[INKSCAPE PNG ERR]', err, stderr)
                 rej(err)
