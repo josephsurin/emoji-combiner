@@ -11,8 +11,7 @@ html, body {
   height: 100vh;
   position: fixed;
   display: grid;
-  grid-template-rows: 80px 80px auto 80px;
-  grid-gap: 12px;
+  grid-template-rows: 80px 80px auto 50px 50px;
 }
 #side-bar .title {
   font-family: "Montserrat";
@@ -46,9 +45,9 @@ html, body {
   border-bottom: 1px solid #53ac32;
   transform: translateY(4px);
 }
-#side-bar .twemoji-attribution {
+#side-bar .info, #side-bar .twemoji-attribution {
   font-size: 15px;
-  padding: 16px;
+  padding: 0 16px;
   text-align: center;
 }
 
