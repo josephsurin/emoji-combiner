@@ -6,6 +6,8 @@ const { exec } = require('child_process')
 const PARTS_DIR = path.join(__dirname, '../../data/optimised-parts/')
 const PARTS = ['bases', 'brows', 'mouth', 'eyes', 'extras']
 
+const INKSCAPE_PATH = process.env.INKSCAPE_PATH || '/usr/bin/inkscape'
+
 const rand_el = arr => arr[Math.floor(Math.random() * arr.length)]
 
 async function load_parts(outfile=false) {
@@ -26,7 +28,7 @@ async function load_parts(outfile=false) {
 
 function inkscape_get_png_buffer(svg_data) {
     return new Promise((res, rej) => {
-        var child = exec(`/usr/bin/inkscape -z -e - -d 500 -`, { encoding: 'binary' }, (err, stdout, stderr) => {
+        var child = exec(INKSCAPE_PATH + ' -z -e - -d 500 -', { encoding: 'binary' }, (err, stdout, stderr) => {
             if(err) {
                 console.log('[INKSCAPE PNG ERR]', err, stderr)
                 rej(err)
@@ -79,7 +81,7 @@ module.exports = {
 
 /* ====== OTHER FUNCTIONS ====== */
 function inkscape_save_png(svg_data, outfile) {
-    var child = exec(`/usr/bin/inkscape -e "${outfile}" -d 500 -`, (err, stdout, stderr) => {
+    var child = exec(`${INKSCAPE_PATH} -e "${outfile}" -d 500 -`, (err, stdout, stderr) => {
         if(err) throw err
         console.log(stdout)
     })
