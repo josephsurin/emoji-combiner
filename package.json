@@ -4,12 +4,14 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "maint": "node server/util/maint.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
     "fs-extra": "^8.1.0"
   }
 }
