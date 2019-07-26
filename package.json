@@ -1,6 +1,9 @@
 {
   "name": "emoji-combiner",
   "version": "1.0.0",
+  "engines": {
+      "node": "11.15.0"
+  }
   "description": "",
   "main": "src/main.js",
   "scripts": {
