@@ -10,12 +10,19 @@ async function fetch_parts_data() {
     return data
 }
 
-function on_emoji_click(id, e) {
-    console.log(id, 'has been clicked')
+function fetch_svg(id, e) {
+    console.log(id, 'has been clicked for svg')
+    window.open(window.location.origin + '/save_svg/' + id, '_blank')
+}
+
+function fetch_png(id, e) {
+    e.preventDefault()
+    console.log(id, 'has been click for png')
+    window.open(window.location.origin + '/save_png/' + id, '_blank')
 }
 
 const rand_el = arr => arr[Math.floor(Math.random() * arr.length)]
-const wrap_svg = d => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">${d}</svg>`
+const wrap_svg = (d, s=100) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s} ${s}" width="${s}" height="${s}">${d}</svg>`
 function generate_random_emoji_svg_node(parts_data) {
     var svg_out = '' 
     var name = ''
@@ -28,12 +35,12 @@ function generate_random_emoji_svg_node(parts_data) {
     name = name.substr(0, name.length - 1)
     svg_out = wrap_svg(svg_out)
     var node = svg_to_node(svg_out)
-    node.onclick = on_emoji_click.bind(this, name)
+    node.onclick = fetch_svg.bind(this, name)
+    node.oncontextmenu = fetch_png.bind(this, name)
     return node
 }
 
 function load_on_scroll(parts_data, e) {
-    console.log('scrolled', e.target.scrollHeight, e.target.scrollTop)
     if(e.target.scrollHeight - e.target.scrollTop <= window.innerHeight + 600) {
         load_emoji_to_DOM(e.target, parts_data, 100)
     }
@@ -46,9 +53,26 @@ function load_emoji_to_DOM(targ_el, parts_data, amount) {
     }
 }
 
+function clear_el(targ_el) {
+    while(targ_el.firstChild) {
+        targ_el.removeChild(targ_el.firstChild)
+    }
+}
+
+var randomise = () => {}
+
 (async() => {
     var parts_data = await fetch_parts_data()
     var emoji_container = document.querySelector('#emoji-container')
     load_emoji_to_DOM(emoji_container, parts_data, 200)
     emoji_container.onscroll = load_on_scroll.bind(this, parts_data)
+
+    randomise = () => {
+        if(emoji_container.childElementCount >= 600) {
+            window.location.reload(false)
+        }
+        clear_el(emoji_container)
+        load_emoji_to_DOM(emoji_container, parts_data, 100)
+    }
 })()
+
