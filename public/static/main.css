@@ -11,7 +11,7 @@ html, body {
   height: 100vh;
   position: fixed;
   display: grid;
-  grid-template-rows: 80px 80px auto 50px 50px;
+  grid-template-rows: 80px 80px calc(100% - 260px) auto 50px 50px;
 }
 #side-bar .title {
   font-family: "Montserrat";
@@ -49,6 +49,33 @@ html, body {
   font-size: 15px;
   padding: 0 16px;
   text-align: center;
+}
+#side-bar .filters-container {
+  background: #c4c6cc;
+  width: 90%;
+  margin-left: 5%;
+}
+#side-bar .filters-container #filter-options {
+  height: 92%;
+  padding: 2px;
+  overflow-y: auto;
+}
+#side-bar .filters-container .filter-tabs-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+#side-bar .filters-container .filter-tabs-container .filter-tab {
+  height: 36px;
+  line-height: 36px;
+  flex-grow: 1;
+  display: inline-block;
+  background: #b6b9c0;
+  text-align: center;
+}
+#side-bar .filters-container .filter-tabs-container .filter-tab:hover {
+  cursor: pointer;
+  background: #a9acb4;
 }
 
 #emoji-container {

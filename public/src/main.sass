@@ -42,7 +42,7 @@ $green3: #37873f
   position: fixed
   display: grid
   $title-height: 80px
-  grid-template-rows: $title-height $title-height auto 50px 50px
+  grid-template-rows: $title-height $title-height calc(100% - 260px) auto 50px 50px
   .title
     font-family: 'Montserrat'
     color: $black1
@@ -59,6 +59,29 @@ $green3: #37873f
     font-size: 15px
     padding: 0 16px
     text-align: center
+  .filters-container
+    background: $grey1
+    width: 90%
+    margin-left: 5%
+    #filter-options
+      height: 92%
+      padding: 2px
+      overflow-y: auto
+    .filter-tabs-container
+      width: 100%
+      display: flex
+      align-items: stretch
+      .filter-tab
+        height: 36px
+        line-height: 36px
+        flex-grow: 1
+        display: inline-block
+        background: darken($grey1, 5%)
+        text-align: center
+        &:hover
+          cursor: pointer
+          background: darken($grey1, 10%)
+          
 
 #emoji-container
   height: calc(100% - 40px)
